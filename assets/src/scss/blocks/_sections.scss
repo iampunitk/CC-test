@@ -1,0 +1,294 @@
+section{
+    margin-bottom: 70px;
+}
+.intro-block{
+    padding-top: 60px;
+    &__wrapper{
+        max-width: 1112px;
+        margin: 0 auto;
+    }
+    &__title{
+        // max-width: 432px;
+        h1{
+            font-weight: 300;
+            b{
+                color: $color-blue;
+                font-weight: bold;
+            }
+            @include breakpoint(767){
+                margin-bottom: 22px;
+            }
+        }
+    }
+    &__content{
+        margin-left: 30px;
+        p{
+            line-height: normal;
+        }
+        @include breakpoint(767){
+            margin: 0;
+        }
+    }
+     @include breakpoint(767){
+        margin-bottom: 10px;
+    }
+}
+
+//featured planning block
+.featured-blocks{
+    overflow-x: hidden;
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -2px;
+        @include breakpoint(767){
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+    }
+    &__col{
+        max-width: 33.33%;
+        width: 100%;
+        padding: 0px 2px;
+        @include breakpoint(767){
+            max-width: 100%;
+            padding: 0;
+            margin-bottom: 2px;
+        }
+    }
+    &__card{
+        position: relative;
+        overflow: hidden;
+        h2{
+            // text-shadow: 0 4px 8px 13px rgba(0,0,0,0.46);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.46);
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 100%;
+            text-align: center;
+            color: $color-white;
+        }
+        img{
+            width: 100%;
+            // height: 396px;
+            height: 26.4vw;
+            object-fit: cover;
+            object-position: center;
+            transition: 1s ease all;
+             @include breakpoint(767){
+                height: 90.4vw;
+            }
+        }
+        &:after{
+            content: '';
+            background-color: rgba($color: $color-blue, $alpha: 0.4) ;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        &:hover{
+            img{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.featured-classes{
+    position: relative;
+    .position-verticle{
+        transform: translateX(-100%);
+        @include breakpoint(767){
+            transform: none;
+        }
+    }
+    h2{
+        // padding-left: 220px;
+        transform: rotate(-90deg);
+        transform-origin: right top;
+        text-align: right;
+        color: $color-blue-light;
+        text-transform: capitalize;
+        &:before{
+            content: '';
+            height: 2px;
+            width: 206px;
+            background-color: $color-blue-light;
+            display: inline-block;
+            position: relative;
+            top: -8px;
+            margin-right: 19px;
+        }
+        @include breakpoint(767){
+            transform: none;
+            text-align: left;
+            padding-bottom: 20px;
+            font-size: rem(28);
+            &:before{
+                width: 81px;
+            }
+        }
+    }
+    &__wrapper{
+        padding: 0 55px 86px;
+        margin-left: 60px;
+        background-color: rgba($color: $color-blue, $alpha: 0.1);
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        @include breakpoint(767){
+            margin-left: 0px;
+            padding: 0 14px 43px;
+            flex-direction: column-reverse;
+        }
+    }
+    &__content{
+        padding: 55px 0;
+        max-width: 52%;
+        h3{
+            font-size: rem(34);
+            line-height: lh(34, 23);
+            font-weight: 300;
+            @include breakpoint(767){
+                font-size: rem(21);
+            }
+        }
+        h4{
+            margin-bottom: 34px;
+            @include breakpoint(767){
+                font-size: rem(23);
+                margin-bottom: 24px;
+
+            }
+        }
+        @include breakpoint(767){
+            max-width: 100%;
+        }
+    }
+    &__img{
+        margin-top: -54px;
+        img{
+            max-width: 435px;
+            width: 100%;
+            height: 20vw;
+            @include breakpoint(1600){
+                height: 30vw;
+            }
+            @include breakpoint(767){
+                height: 80vw;
+            }
+        }
+        @include breakpoint(767){
+             margin-top: -24px;
+        }
+    }
+
+
+    //slider
+    .slider-container{
+        .slide{
+            display: none;
+        }
+    }
+
+    .slider-navigation{
+        display: flex;
+        position: absolute;
+        right: 190px;
+        bottom: -20px;
+
+        .slide-controls{
+            display: inline-block;
+            padding: 20px 18px;
+            background-color: $color-blue;
+            cursor: pointer;
+            &.slide-next{
+                img{
+                    transform: scaleX(-1);
+                }
+            }
+            &:hover{
+                background-color: #2A2A2B;
+            }
+        }
+        @include breakpoint(767){
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+.form-block{
+    background-color: $color-purple;
+    padding: 57px 0;
+    color: $color-white;
+    h2{
+        font-size: rem(38);
+        line-height: lh(38, 44);
+        @include breakpoint(767){
+            font-size: rem(26);
+
+        }
+    }
+    .sub-heading{
+        color: $color-white;
+        font-weight: 300;
+    }
+    &__wrapper{
+        max-width: 861px;
+        margin: 0 auto;
+    }
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -30px;
+        @include breakpoint(767){
+            max-width: 100%;
+            margin: 0 -15px;
+
+        }
+    }
+    &__col{
+        max-width: 50%;
+        padding: 0 30px;
+        @include breakpoint(767){
+            max-width: 100%;
+            padding: 0 15px;
+        }
+        .input-wrapper{
+            label{
+                font-size: rem(17);
+                line-height: lh(17,21);
+            }
+            input{
+                max-width: 100%;
+                color: $body-color;
+                height: 38px;
+                padding: 10px;
+            }
+            input[type="submit"]{
+                @extend .button;
+            }
+        }
+    }
+    .button-wrapper{
+        margin-top: 52px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .disclaimer{
+        font-size: rem(11);
+        text-align: center;
+        color: $color-white;
+        max-width: 417px;
+        margin: 0 auto;
+    }
+
+}

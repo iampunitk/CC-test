@@ -1,0 +1,171 @@
+// example @include breakpoint(940) { width:80%; }
+
+// Desktop first development
+@mixin breakpoint($size) {
+  @media only screen and (max-width: $size + px) {
+    @content;
+  }
+}
+
+@mixin heightBreakpoint($size) {
+  @media only screen and (max-height: $size + px) {
+    @content;
+  }
+}
+
+@mixin widthHeightBreakpoint($wSize, $hSize) {
+  @media screen and (max-width: $wSize + px),
+    screen and (max-height: $hSize + px) {
+    @content;
+  }
+}
+
+// Mobile first development
+@mixin min-breakpoint($size) {
+  @media only screen and (min-width: $size + px) {
+    @content;
+  }
+}
+
+@mixin min-heightBreakpoint($size) {
+  @media only screen and (min-height: $size + px) {
+    @content;
+  }
+}
+
+// landscape
+@mixin landscape {
+  @media only screen and (max-device-width: 700px) and (orientation: landscape){
+    @content;
+  }
+}
+
+/* New breakpoint mixins */
+// Media query mixin
+@mixin bp($query) {
+  @if $query==desktop-lg {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  }
+
+  @else if $query==desktop-md {
+    @media (min-width: 1336px) {
+      @content;
+    }
+  }
+
+  @else if $query==lg-max {
+    @media (max-width: 1199.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==tablet-md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $query==tablet-sm {
+    @media (max-width: 991.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==odd-bp {
+    @media (min-width: 992px) and (max-width:1199.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==lg-laptop {
+    @media (min-width: 992px) and (max-width:1440.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==xl-desktop {
+    @media(min-width:1440px) {
+      @content;
+    }
+  }
+
+  @else if $query==laptop-max {
+    @media(max-width:1699.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==xxl {
+    @media(min-width:1700px) {
+      @content;
+    }
+  }
+
+  @else if $query==tablet-strict {
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $query==ipad {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $query==ipad-pro {
+    @media(max-width:1024.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==ipad-pro-min {
+    @media(min-width:1024px) {
+      @content;
+    }
+  }
+
+  @else if $query==iphone-x-land {
+    @media(max-width: 812.98px) and (orientation:landscape) {
+      @content;
+    }
+  }
+
+  @else if $query==mobile {
+    @media (max-width: 767.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==mobile-sm {
+    @media (max-width: 576.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==iphone-6 {
+    @media (max-width: 414.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==iphone-x {
+    @media (max-width: 375.98px) {
+      @content;
+    }
+  }
+
+  @else if $query==xs {
+    @media (max-width: 320.98px) {
+      @content;
+    }
+  }
+}

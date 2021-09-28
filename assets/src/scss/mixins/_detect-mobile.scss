@@ -1,0 +1,7 @@
+@mixin mobile-tab($selector){
+  @at-root .responsive-devices{
+    #{$selector}{
+      @content
+    }
+  }
+}

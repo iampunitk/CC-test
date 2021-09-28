@@ -1,0 +1,47 @@
+/* scss variables */
+/*
+
+font-family: 'Gotham';
+*/
+$body-font:'Gotham';
+$primary-font: 'Gotham';
+// $icons-font : 'Font Awesome 5 Free';
+$body-weight-light: 300;
+
+
+
+// Colors
+
+$body-font-color: #313540;
+$white: #fff;
+$body-color: #313540;
+$border:#ECECEC;
+$background:#E5E5E5;
+//primary
+$color-red : #9D2235;
+$color-red-2 : #A71D37;
+$color-grey : #2E2E2E;
+$color-blue : #2154CF;
+$color-blue-light : #C7D4F3;
+$color-purple : #17274C;
+//secondary
+$color-secondary-1: #3C3E40;
+$color-secondary-2: #8C1E2F;
+$color-secondary-3: #FFF9F7;
+
+$color-white: #ffffff;
+$color-white-50: rgba(255, 255, 255, 0.5);
+$color-black: #000000;
+$color-black-50: rgba(0, 0, 0, 0.5);
+
+
+
+// Transitions
+$transitionEffect: cubic-bezier(.6,.04,.12,.96);
+
+// Header
+$header-height: 77px;
+$header-breakpoint: 991.98;
+
+// site container width as per design is 1200 + 30 padding(15px left and right)
+$container-width : 1230px;

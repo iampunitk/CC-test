@@ -1,0 +1,164 @@
+.button{
+    font-weight: 500;
+    font-size: rem(18px);
+    line-height: lh(18, 19.8);
+    @include single-transition(all, 0.3s, ease-in-out, 0.1s);
+    position: relative;
+    padding: 17px 26px;
+    display: inline-block;
+    border-radius: 70px;
+    text-align: center;
+    &--blue{
+        background-color: $color-blue;
+        color:$white;
+        &:hover{
+            background-color: #17274C;
+            color: $color-white;
+        }
+    }
+    
+
+    @include breakpoint(767) {
+        font-size: rem(12px);
+        line-height: lh(12, 19);
+    }
+    &.download-btn{
+        &:after{
+            content: "\e900";
+            font-family: 'icomoon' !important;
+            @include transform(rotate(90deg));
+            font-size: rem(16);
+            display: inline-block;
+            padding-left: 4px;
+            position: absolute;
+            top: 20px;
+            right: 24px; //increased by 4 px 
+            transition: all 0.3s ease-in-out;
+
+            @include bp(mobile){
+                font-size: rem(14);
+                top: 22px;
+                right: 22px;
+            }
+        }
+        &:hover{
+            &:after{
+                @include transform(rotate(90deg) translateX(5px));
+            }
+        }
+    }
+}
+
+//round button arrow effect
+.round-arrow-btn{
+    position: absolute;
+    background-color: $color-white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 35px;
+    bottom: 35px;
+    opacity:0;
+    transform: translateY(10px);
+    // transition: all 0.3s ease-in-out; 
+    @include single-transition(all, 0.3s, ease-in-out, 0.1s);
+    
+    z-index: 2;
+
+    .icon{
+        transform: rotate(-45deg);
+        z-index: 2;
+        // transition: all .3s ease-in-out;
+        @include single-transition(all, 0.3s, ease-in-out, 0.1s);
+
+        color: $color-secondary-2;
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        transform: scale(0);
+        background-color: $color-secondary-2;
+        z-index: 1;
+        border-radius: 50%;
+        // transition: all .3s ease-in-out;
+        @include single-transition(all, 0.3s, ease-in-out, 0.1s);
+
+    }
+    &:hover{
+        .icon{
+            transform: none;
+            &:before{
+                color: $color-white !important;
+            }
+        }
+        &:before{
+            transform: scale(1.08);
+        }
+    }
+    @include bp(tablet-sm){
+        height: 40px;
+        width: 40px;
+    }
+}
+
+//slide navigation with round button arrow
+.slide-nav{
+    max-width: 150px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include bp(mobile){
+        max-width: 130px;
+    }
+    .swiper-button-prev,.swiper-button-next{
+        width: 60px;
+        height: 60px;
+        border: 1px solid $body-color;
+        border-radius: 50%;
+        outline: none;
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        margin: auto;
+        @include single-transition(all, 0.3s, ease-in-out, 0.1s);
+        &:after{
+            display: none;
+        }
+        .icon{
+            &:before{
+                color: $body-color;
+            }
+        }
+        &:hover{
+            background-color: $color-secondary-2;
+            border: 1px solid $color-secondary-2;
+            .icon{
+                &:before{
+                    color: $color-white;
+                }
+            }
+        }
+        @include bp(mobile){
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .swiper-button-prev{
+        transform: rotate(180deg);
+    }
+}
+
+//load more button
+.load-more-posts{
+    padding: 19px 36px !important;
+}

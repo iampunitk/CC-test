@@ -1,0 +1,147 @@
+/* fonts list */
+
+/*
+
+font-family: 'Gotham';
+*/
+
+html, :root{
+    font-size: 16px;
+  }
+  
+  body{
+    font-family: $primary-font;
+    color: $body-color;
+  }
+  p{
+    color: $body-color;
+    font-size: rem(18);
+    line-height: lh(18, 28.8);
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    @include bp(mobile){
+      font-size: rem(16);
+      line-height: lh(16, 25.6);
+    }
+  }
+  %block-margins {
+    margin: 1em 0;
+  }
+  
+  %heading-margins {
+    margin: 0 0 15px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    // font-weight: normal;
+    @extend %heading-margins;
+    strong{
+      font-weight: 900;
+    }
+  }
+  
+  /* headings */
+  .h1,
+  h1 {
+    font-size: rem(40);
+    line-height: lh(40,23);
+    // font-weight: 300;
+    margin-bottom:24px;
+
+    // @include bp(mobile){
+    //   font-size: rem(48);
+    //   line-height: lh(48, 52.8);
+    // }
+
+    // @include breakpoint(374){
+    //    font-size: rem(38);
+    //    line-height: lh(38, 42.8);
+    // }
+  }
+  h2,.h2 {
+    font-size: rem(30);
+    line-height: lh(30,38);
+    font-weight: 700;
+    margin-bottom: 32px;
+    @include bp(mobile){
+      font-size: rem(21);
+      line-height: lh(21,26);
+      margin-bottom: 16px;
+    }
+  }
+  h3,.h3 {
+    font-size: rem(34);
+    line-height: lh(34,23);
+    font-weight: 700;
+    margin-bottom: 15px;
+    @include bp(mobile){
+      font-size: rem(21);
+    }
+  }
+  h4,.h4 {
+    font-size: rem(32);
+    line-height: 1.25;
+    font-weight: 500;
+    @include bp(ipad){
+      font-size: rem(26);
+      line-height: lh(26, 32.5);
+    }
+    @include bp(mobile){
+      font-size: rem(22);
+      line-height: lh(22, 27.5);
+    }
+  }
+  h5,.h5 {
+    font-size: rem(26);
+    line-height: 1.25;
+    font-weight: 500;
+    @include bp(mobile){
+      font-size: rem(22);
+      line-height: lh(22, 27.5);
+    }
+  }
+  h6,.h6 {
+    font-size: rem(20);
+    line-height: 1.25;
+    font-weight: 700;
+
+    @include bp(mobile){
+      font-size: rem(18);
+      line-height: lh(18,23.4);
+    }
+  }
+
+  .sub-heading{
+    font-size: rem(18);
+    line-height: lh(18,19);
+  }
+  
+  // Others
+  p{
+    font-size: rem(17);
+    line-height: lh(17,28);
+     @include breakpoint(768){
+        font-size: rem(12);
+        line-height: lh(12 ,16);
+      }
+  }
+  ul, ol, pre {
+    @extend %block-margins;
+  }
+  
+  ul,ol{
+    li{
+      font-size: rem(22);
+      line-height: 1.08;
+      @include breakpoint(768){
+        font-size: rem(17);
+        line-height: 1.22;
+      }
+    }
+  }
+  a{
+    // transition: 0.3s all ease-in-out;
+    &:hover{
+      text-decoration: none;
+    }
+  }

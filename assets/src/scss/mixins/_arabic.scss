@@ -1,0 +1,7 @@
+@mixin arabic($selector){
+    @at-root .rtl{
+      #{$selector}{
+        @content
+      }
+    }
+  }
